@@ -9,7 +9,15 @@ export class OrdensService {
     @InjectModel('Ordens') private readonly ordensModel: Model<Ordens>,
   ) {}
 
-  async findAll(): Promise<Ordens[]> {
-    return await this.ordensModel.find().exec();
+  async findAll(page?: number, limit?: number): Promise<Ordens[]> {
+    page = page || 0;
+    limit = limit || 50;
+
+    return await this.ordensModel
+      .find()
+      .sort([['data', -1], ['hora', -1]])
+      .limit(limit)
+      .skip(page * limit)
+      .exec();
   }
 }
