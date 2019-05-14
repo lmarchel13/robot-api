@@ -1,0 +1,43 @@
+{{> imports}}
+
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="row">
+            <h1 class="col-sm-12 text-center">{{heading}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-sm table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Data</td>
+                            <td>Último</td>
+                            <td>Abertura</td>
+                            <td>Fechamento</td>
+                            <td>Max</td>
+                            <td>Minx</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td>{{this._id}}</td>
+                            <td>{{this.data}}</td>
+                            <td>{{this.ultimo}}</td>
+                            <td>{{this.abertura}}</td>
+                            <td>{{this.fechamento}}</td>
+                            <td>{{this.max}}</td>
+                            <td>{{this.min}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>

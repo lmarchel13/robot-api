@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+{{> imports}}
+
+<body>
+    {{> header}}
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Robot Web App</h1>
+                <p class="lead text-muted">Aplicativo para monitor as cotações e ordens. Em desenvolvimento...</p>
+            </div>
+        </section>
+
+        <div class="album py-1 bg-light">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="/cotacoes"><img src="/static/img/cotacao.png" height="250" width="100%"
+                                    id="cotacao"></a>
+                            <div class="card-body">
+                                <p class="card-text">Monitore em tempo real as cotações da BOVESPA.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <a href="/ordens">
+                                <img src="/static/img/ordens.png" height="250" width="100%" id="ordens">
+                            </a>
+                            <div class="card-body">
+                                <p class="card-text">Monitore em tempo real as ordens da BOVESPA.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    {{>footer}}
+</body>
+
+</html>

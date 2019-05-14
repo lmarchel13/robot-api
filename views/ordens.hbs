@@ -1,0 +1,49 @@
+{{> imports}}
+
+<body>
+    {{>header}}
+
+    <div class="container">
+        <div class="row">
+            <h1 class="col-sm-12 text-center">{{heading}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-sm table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Data</td>
+                            <td>Hora</td>
+                            <td>Origem</td>
+                            <td>Pos.</td>
+                            <td>Tipo</td>
+                            <td>Ativo</td>
+                            <td>Valor</td>
+                            <td>Qtde.</td>
+                            <td>Status</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td>{{this._id}}</td>
+                            <td>{{this.data}}</td>
+                            <td>{{this.hora}}</td>
+                            <td>{{this.origem}}</td>
+                            <td>{{this.pos}}</td>
+                            <td>{{this.tipo}}</td>
+                            <td>{{this.ativo}}</td>
+                            <td>{{this.valor}}</td>
+                            <td>{{this.qtd}}</td>
+                            <td>{{this.status}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>

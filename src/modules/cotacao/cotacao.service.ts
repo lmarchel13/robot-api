@@ -9,7 +9,15 @@ export class CotacaoService {
     @InjectModel('cotacao') private readonly cotacaoModel: Model<Cotacao>,
   ) {}
 
-  async findAll(): Promise<Cotacao[]> {
-    return await this.cotacaoModel.find().exec();
+  async findAll(page?: number, limit?: number): Promise<Cotacao[]> {
+    page = page || 0;
+    limit = limit || 50;
+
+    return await this.cotacaoModel
+      .find()
+      .sort([['data', -1]])
+      .limit(limit)
+      .skip(page * limit)
+      .exec();
   }
 }
