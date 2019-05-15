@@ -8,7 +8,7 @@ import { Logger } from '@nestjs/common';
 import * as hbs from 'hbs';
 
 async function bootstrap() {
-  const PORT = 3000;
+  const PORT = process.env.PORT || 3000;
 
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
